@@ -10,10 +10,8 @@ public class PalindromeChecker {
 		if (maybePalindrome.charAt(0) != maybePalindrome.charAt(maybePalindrome.length() - 1)) {
 			return false;
 		}
-		
-		maybePalindrome = maybePalindrome.substring(1, maybePalindrome.length() - 1);
-		
-		return check(maybePalindrome);
+				
+		return check(maybePalindrome.substring(1, maybePalindrome.length() - 1));
 		
 	}
 	
