@@ -1,19 +1,19 @@
 
 public class PalindromeChecker {
 	
-	public static boolean check(String string) {
+	public static boolean check(String maybePalindrome) {
 		
-		if (string.length() <= 1) {
+		if (maybePalindrome.length() <= 1) {
 			return true;
 		}
 		
-		if (string.charAt(0) != string.charAt(string.length() - 1)) {
+		if (maybePalindrome.charAt(0) != maybePalindrome.charAt(maybePalindrome.length() - 1)) {
 			return false;
 		}
 		
-		string = string.substring(1, string.length() - 1);
+		maybePalindrome = maybePalindrome.substring(1, maybePalindrome.length() - 1);
 		
-		return check(string);
+		return check(maybePalindrome);
 		
 	}
 	
