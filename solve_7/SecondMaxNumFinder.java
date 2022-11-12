@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class SecondMaxNumFounder {
+public class SecondMaxNumFinder {
 	
 	
 	public static int find(List<Integer> list) {
