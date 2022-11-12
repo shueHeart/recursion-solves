@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class SecondMaxNumFinder {
+public class SecondMaxNumFounder {
 	
 	
 	public static int find(List<Integer> list) {
@@ -14,6 +14,9 @@ public class SecondMaxNumFinder {
 		if (maxNum <= list.get(index)) {
 			secondMaxNum = maxNum;
 			maxNum = list.get(index);
+		} 
+		else if (secondMaxNum < list.get(index)) {
+			secondMaxNum = list.get(index);
 		}
 		
 		return find(list, index + 1, maxNum, secondMaxNum);
