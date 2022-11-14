@@ -1,54 +1,25 @@
-package recursion;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
 
 public class FilesCounter {
 	
-	private int count() {
+	public static int count(String path) {
 		
-		Package pack = new Package();
+		File folder = new File(path);
 		
-		List<File> files = new ArrayList<File>();
-		
-		files.add(new Package());
-		
-		return 0; 
-	}
-	
-	
-	
-	private class File {
-		private Integer value;
-		
-		public File() {}
-
-		public Integer getValue() {
-			return value;
-		}
-
-		public void setValue(Integer value) {
-			this.value = value;
-		}
-	}
-	
-	private class Package extends File {
-		private List<File> files;
-		
-		public Package () {
-			files = new ArrayList<File>();
-		}
-
-		public List<File> getFiles() {
-			return files;
-		}
-
-		public void setFiles(List<File> files) {
-			this.files = files;
-		}
-		
+		return count(folder.listFiles(), 0);
 		
 	}
+	
+	public static int count(File[] files, int index) {
+				
+		if (index >= files.length) return 0; 
+		
+		if (files[index].isDirectory()) {
+			return count(files, index + 1) + count(files[index].listFiles(), 0);
+		}
+		
+		return 1 + count(files, index + 1);
+	}
+	
 }
-
 
